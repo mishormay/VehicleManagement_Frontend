@@ -1,0 +1,31 @@
+<div class="d-flex flex-row bd-highlight mb-3">
+    <div class="p-2 w-50 bd-highlight">
+      <div class="input-group mb-3">
+        <span class="input-group-text">Name</span>
+        <input type="text" class="form-control" [(ngModel)]="name">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text">Model Year</span>
+        <input type="text" class="form-control" [(ngModel)]="modelYear">
+      </div>
+      
+      <!-- <div class="input-group mb-3">
+        <span class="input-group-text">Department</span>
+        <select class="form-select" [(ngModel)]="manufacturer">
+          <option>--Select--</option>
+          <option *ngFor="let Menufacture of ManufacturerList">
+            {{Menufacture.name}}
+          </option>
+        </select>
+      </div> -->
+      
+    </div>
+   
+  </div>
+  <button type="button" (click)="addVehicle()" class="btn btn-primary">
+    Create
+  </button>
+  
+  <button type="button" (click)="updateEmployee()" *ngIf="emp.EmployeeId!='0'" class="btn btn-primary">
+    Update
+  </button>

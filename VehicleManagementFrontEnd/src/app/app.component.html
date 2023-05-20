@@ -1,0 +1,38 @@
+<nav class="navbar navbar-light bg-light justify-content-between">
+  <a class="navbar-brand" style="margin-left: 10px;">COMP 584</a>
+  
+  <div class="nav-item">
+    <button routerLink="VehicleManufacturer" *ngIf="isLoggedIn$" class="m-1 btn btn-light btn-outline-primary" Button>Vehicle Manufacturer</button>
+    <button routerLink="Vehicle" *ngIf="isLoggedIn$" class="m-1 btn btn-light btn-outline-primary" Button>Vehicles</button>
+  </div>
+  <div class="form-inline" *ngIf="isLoggedOut$">
+    <label style="margin-right: 10px;">Login</label>
+    <input type="text" [(ngModel)]="email" placeholder="User Name" style="margin-right: 10px;" aria-label="Email">
+    <input type="password" [(ngModel)]="password" placeholder="Password" style="margin-right: 10px;" >
+    <button (click)="doLogin()" class="btn btn-sm btn-primary" type="submit" style="margin-right: 10px;">Login</button>
+  </div>
+  <div class="nav-item">
+    <button (click)="Logout()" *ngIf="isLoggedIn$" class="btn btn-sm btn-danger" style="margin-right: 10px;" Button>Logout</button>
+  </div>
+</nav>
+<div class="container-fluid">
+  <div *ngIf="isLoggedOut$">
+  <h3 style="margin-top: 10px;">Welcome, COMP 584!</h3>
+  <p>This is a newly built advanced web application that incorporates:</p>
+  <ul>
+    <li>Single Page Application (SPA)</li>
+      <li>Model-View-Controller (MVC)</li>
+      <li>Object-Relational Mapping (ORM)</li>
+      <li>Authentication</li>
+      <li>Deployment</li>
+  </ul>
+  <br />
+  <p>ASP.NET/C# is used for the server-side of the code
+    Angular is used on the client-side of the code
+    </p>
+
+    <br />
+    <p>This web application will showcase two one-many relational tables on the topic of vehicles. Please free to explore and interact with the table</p>
+  </div>
+  <router-outlet></router-outlet>
+</div>

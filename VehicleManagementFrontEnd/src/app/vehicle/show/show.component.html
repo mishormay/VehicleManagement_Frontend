@@ -1,0 +1,44 @@
+<button type="button" class="btn btn-primary m-2 float-end" data-bs-toggle="modal" data-bs-target="#exampleModal"
+  (click)="addClick()">
+  Add Vehicle
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{ModalTitle}}</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close" (click)="closeClick()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <app-add-edit *ngIf="ActivateAddEdit">
+        </app-add-edit>
+      </div>
+    </div>
+  </div>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Vehicle Name</th>
+      <th>Make Year</th>
+      <th>Manufacturer</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let dataItem of VehicleList">
+      <td>{{dataItem.id}}</td>
+      <td>{{dataItem.name}}</td>
+      <td>{{dataItem.modelYear}}</td>
+      <td>{{dataItem.manufacturer}}</td>
+      
+    </tr>
+  </tbody>
+</table>
